@@ -15,7 +15,7 @@ int main(){
         
         // La resta d'operacions només son viables si la nostra
         // priority queue no està buida.
-        // Si ho està, escrivim un missatge d'error
+        // Si ho està, escrivim un missatge d'error, i continuem
         if (PQ.empty()) {
             cout << "error!" << endl;
             continue;

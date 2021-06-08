@@ -14,7 +14,7 @@ LL resol(LL n) {
         pot_3 *= 3;
     }
 
-    // La resposta serà resol(n) = resol(2^m) + resol(n - 2^m).
+    // La resposta serà resol(n) = resol(2^m) + 2*resol(n - 2^m).
     // Tenint en compte que resol(2^m) = 3^m:
     return pot_3 + 2*resol(n - pot_2);
 }
