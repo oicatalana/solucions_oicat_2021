@@ -90,7 +90,6 @@ while (y, x) != (-1, -1):
     dibuixa_casella(y, x, "Darkseagreen")
     if mapa[y][x] in ['O', 'S']:
         dibuixa_forat(y, x, colors[ind - 1])
-    print(y, x, ind, pare[y][x][ind], entrada)
     y, x, ind = pare[y][x][ind]
 
 # Guardem la imatge
