@@ -13,7 +13,7 @@ typedef vector<PII> VPII;
 int main() {
     int n, m;
     while (cin >> n >> m) {
-		// Llegim el graf
+        // Llegim el graf
         VVI G(n);
         for (int i = 0; i < m; ++i) {
             int a, b;
@@ -21,10 +21,10 @@ int main() {
             G[a].push_back(b);
             G[b].push_back(a);
         }
-    
-		// Assignem els colors aleatòriament fins trobar una manera bona
+
+        // Assignem els colors aleatòriament fins trobar una manera bona
         VB color(n);		// color[k] és false si k és vermell, i true si és blau
-		int total = m;		// Nombre d'arestes dolentes que hem comptat
+        int total = m;		// Nombre d'arestes dolentes que hem comptat
         while (total > m/2) {
             // Tornem a començar. Marquem 0 arestes dolentes
             total = 0;
@@ -40,12 +40,12 @@ int main() {
                         ++total;
         }
 
-		// Escrivim la resposta
+        // Escrivim la resposta
         cout << total;
         for (int i = 0; i < n; ++i)
-			for (int j : G[i])
-				if (j < i and color[i] == color[j])
-            		cout << "  " << i << ' ' << j;
-		cout << endl;
+            for (int j : G[i])
+                if (j < i and color[i] == color[j])
+                    cout << "  " << i << ' ' << j;
+        cout << endl;
     }
 }

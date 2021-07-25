@@ -4,10 +4,10 @@
 using namespace std;
 
 int main() {
-	int n;
-	while (cin >> n) {
+    int n;
+    while (cin >> n) {
         // Llegim la llista
-		vector<int> A(n);
+        vector<int> A(n);
         for (int& x : A)
             cin >> x;
 
@@ -41,8 +41,8 @@ int main() {
             if (outdegree[i] == 0)
                 posicions_conegudes.push(i);
         }
-    	
+
         // Responem en funció de si la primera posició és guanyadora
-		cout << (es_posicio_guanyadora[0] ? "Max" : "Izan") << endl;
+        cout << (es_posicio_guanyadora[0] ? "Max" : "Izan") << endl;
     }
 }

@@ -5,10 +5,10 @@ using namespace std;
 // ASSUMIM QUE A[i] < i!!!!!
 
 int main() {
-	int n;
-	while (cin >> n) {
+    int n;
+    while (cin >> n) {
         // Llegim la llista
-		vector<int> A(n);
+        vector<int> A(n);
         for (int& x : A)
             cin >> x;
 
@@ -21,5 +21,5 @@ int main() {
 
         // Responem en funció de si la primera posició és guanyadora
         cout << (es_posicio_guanyadora[0] ? "Max" : "Izan") << endl;
-	}
+    }
 }

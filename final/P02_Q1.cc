@@ -1,12 +1,14 @@
 #include <iostream>
 using namespace std;
 
+// Suma de dígits
 int s(int n) {
     if (n < 10)
         return n;
     return s(n/10) + (n%10);
 }
 
+// Producte de dígits
 int p(int n) {
     if (n < 10)
         return n;
