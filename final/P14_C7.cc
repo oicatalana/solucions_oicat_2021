@@ -12,7 +12,7 @@ typedef vector<PII> VPII;
 int main() {
     int n, m;
     while (cin >> n >> m) {
-		// Llegim el graf
+        // Llegim el graf
         VVI G(n);
         for (int i = 0; i < m; ++i) {
             int a, b;
@@ -21,38 +21,38 @@ int main() {
             G[b].push_back(a);
         }
 
-		// Assignem els colors
+        // Assignem els colors
         VB color(n);		// color[k] és false si k és vermell, i true si és blau
-		int total = 0;		// Nombre d'arestes dolentes que hem comptat
+        int total = 0;		// Nombre d'arestes dolentes que hem comptat
         for (int i = 0; i < n; ++i) {
-			// Comptem quants veïns de cada color j, amb j < i, té i 
+            // Comptem quants veïns de cada color j, amb j < i, té i 
             int vermells = 0;
             int blaus = 0;
             for (int j : G[i])
                 if (j < i) {
-					if (color[j])
-                    	++blaus;
-					else
-						++vermells;
-				}
+                    if (color[j])
+                        ++blaus;
+                    else
+                        ++vermells;
+                }
 
-			// Pintem i del color corresponent
-			if (blaus > vermells) {
-				color[i] = false;
-				total += vermells;
-			}
-			else {
-				color[i] = true;
-				total += blaus;
-			}
+            // Pintem i del color corresponent
+            if (blaus > vermells) {
+                color[i] = false;
+                total += vermells;
+            }
+            else {
+                color[i] = true;
+                total += blaus;
+            }
         }
 
-		// Escrivim la resposta
+        // Escrivim la resposta
         cout << total;
         for (int i = 0; i < n; ++i)
-			for (int j : G[i])
-				if (j < i and color[i] == color[j])
-            		cout << "  " << i << ' ' << j;
-		cout << endl;
+            for (int j : G[i])
+                if (j < i and color[i] == color[j])
+                    cout << "  " << i << ' ' << j;
+        cout << endl;
     }
 }
